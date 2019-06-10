@@ -1,0 +1,14 @@
+# Always use version 2 for node.js development
+# https://youtu.be/yeZqoh3-cME?t=1828
+version: '2.4'
+services:
+  node:
+    build:
+      context: .
+      target: dev
+    volumes:
+      # delegated makes macs faster 
+      - .:/app:delegated
+    ports:
+      - "3000:3000"
+      - "9229:9229"
